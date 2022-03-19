@@ -3,12 +3,17 @@
  */
 package kz.zhanbolat.monitoring;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import java.lang.management.ManagementFactory;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+
+    public static void main(String[] args) throws Exception {
+        MBeanServer beanServer = ManagementFactory.getPlatformMBeanServer();
+        EntityMXBean entity = new SimpleEntity(1, "entity");
+        ObjectName entityName = new ObjectName("kz.zhanbolat.monitoring:type=entity");
+        beanServer.registerMBean(entity, entityName);
+        while (true) {}
     }
 }
