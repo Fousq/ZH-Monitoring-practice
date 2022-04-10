@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dropwizard.version>2.0.29</dropwizard.version>
+        <dropwizard-health.version>1.7.1</dropwizard-health.version>
         <mainClass>kz.zhanbolat.monitoring.MontoringApplication</mainClass>
     </properties>
 
@@ -48,6 +49,11 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.modules</groupId>
+            <artifactId>dropwizard-health</artifactId>
+            <version>${dropwizard-health.version}</version>
         </dependency>
     </dependencies>
 

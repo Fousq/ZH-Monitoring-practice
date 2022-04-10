@@ -2,3 +2,11 @@ logging:
   level: INFO
   loggers:
     kz.zhanbolat.monitoring: DEBUG
+
+
+health:
+  delayedShutdownHandlerEnabled: true
+  shutdownWaitPeriod: 20s
+  healthChecks:
+    - name: healthEntity
+      critical: true
